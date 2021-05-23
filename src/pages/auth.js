@@ -1,9 +1,11 @@
 import React from "react";
 import { withAuthUser, AuthAction } from "next-firebase-auth";
 import FirebaseAuth from "../components/FirebaseAuth";
+import Header from "../components/Header";
 
 const Auth = () => (
   <div>
+    <Header />
     <FirebaseAuth />
   </div>
 );

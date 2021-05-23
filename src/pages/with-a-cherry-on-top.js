@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
 
 export default function UwU() {
   return (
     <div>
+      <Header />
       <p className="title slide-in-right">
         Now if THIS has made your day better by at least 2%, u r milk.
       </p>
