@@ -21,59 +21,40 @@ a {
 }
 .title {
   font-family: "Montserrat";
-  font-size: 56px;
+  font-size: 35px;
   text-align: center;
 }
-.body {
-  font-family: "Montserrat";
-  font-size: 20px;
-}
+
 /* CONTAINERS */
-.img-rectangle {
-  display: block;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  max-width: 50%;
-  height: auto;
-  margin: 4vh auto;
-}
 .img-circle {
-  height: 400px;
-  width: 400px;
-  margin-bottom: 20%;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 5%;
   border-radius: 50%;
-}
-.person {
-  display: block;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
 }
 .button {
   align-items: center;
-  flex: auto;
-  width: 70%;
-  background-color: "#f4b670";
+  border-radius: 100;
+  background-color: #f4b670;
+  padding: 1%;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 
 /* LETTER ANIMATION */
 .flip-in-x {
   animation: flipX 0.75s ease 0s 1 normal both;
 }
-.person-img {
+.corgi-img {
   transition: 0.5s ease;
   border-radius: 50%;
   opacity: 1;
 }
-.letter-svg {
-  transition: 0.5s ease;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: none;
-}
 .emoji {
   position: relative;
-  top: -30%;
+  top: -70%;
   font-size: 69px;
   text-align: center;
   width: 100%;
@@ -81,7 +62,7 @@ a {
   transition: all 0.5s linear;
   animation: pwease 1s ease 0s infinite;
 }
-.img-circle:hover .person-img {
+.img-circle:hover .corgi-img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: scale(1.1);
 }
@@ -89,6 +70,7 @@ a {
   opacity: 1;
   transform: scale(1.1);
 }
+
 /* FLIPPING ANIMATION */
 @keyframes flipX {
   0% {
@@ -145,7 +127,6 @@ a {
 .slide-in-right {
   animation: slideInRight 0.75s ease 0s 1 normal both;
 }
-
 .headerLine {
   background: black;
   height: 4px;
@@ -174,15 +155,24 @@ a {
   }
 }
 
+/* FADE IN ANIMATION */
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.75s ease 0s 1 normal both;
+}
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE SCREEN */
 @media screen and (max-width: 996px) {
   .img-circle {
     height: 150px;
     width: 150px;
     margin-bottom: 10vh;
     border-radius: 50%;
-  }
-  .row .team {
-    --ifm-col-width: 50% !important;
   }
   .emoji {
     position: relative;
@@ -205,48 +195,18 @@ a {
       letter-spacing: -8px;
     }
   }
-  .text-box {
-    width: 75%;
-  }
-  .img-rectangle {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 75%;
-    height: auto;
-    margin: 4vh auto;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .title {
-    font-size: 48px;
+    font-size: 20px;
     text-align: left;
-  }
-  .body {
-    font-size: 12px;
-    text-align: center;
-  }
-  .text-box {
-    width: 90%;
-  }
-  .iPhoneBox {
-    display: none;
-  }
-  .img-rectangle {
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 90%;
-    height: auto;
-    margin: 4vh auto;
   }
   .img-circle {
     height: 100px;
     width: 100px;
     margin-bottom: 5vh;
     border-radius: 50%;
-  }
-  .row .team {
-    --ifm-col-width: 50% !important;
   }
   .emoji {
     position: relative;
@@ -274,12 +234,5 @@ a {
 @media screen and (max-width: 330px) {
   .title {
     font-size: 35px;
-  }
-  .body {
-    font-size: 12px;
-    text-align: center;
-  }
-  .row .team {
-    --ifm-col-width: 100% !important;
   }
 }
