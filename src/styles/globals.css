@@ -265,7 +265,7 @@ a {
 }
 
 .pulse-n-spin {
-  animation: pulse 1s infinite ease-in-out alternate;
+  animation: pulse 2s infinite ease-in-out alternate;
 }
 
 @keyframes pulse {

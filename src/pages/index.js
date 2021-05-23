@@ -13,7 +13,7 @@ const Home = () => {
       )}
       {AuthUser.displayName ? (
         <p className="title slide-in-left">
-          Hello, {AuthUser.displayName.split(" ")[0]}
+          Hewwo, {AuthUser.displayName.split(" ")[0]}
         </p>
       ) : null}
       <p className="title slide-in-left" style={{ animationDelay: "0.5s" }}>
