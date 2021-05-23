@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { useAuthUser, withAuthUser } from "next-firebase-auth";
+import Head from "next/head";
 import Link from "next/link";
 
 const Home = () => {
   const AuthUser = useAuthUser();
   return (
     <div>
+      <Head>
+        <title>Pwease gimme the tech</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {AuthUser.email ? (
         <button onClick={AuthUser.signOut}>Sign out</button>
       ) : (
