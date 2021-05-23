@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 
 export default function UwU() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    fetch("/api/get-count")
+      .then((res) => res.json())
+      .then(({ count }) => {
+        setCount(count);
+      });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -18,6 +27,11 @@ export default function UwU() {
       >
         <img className="corgi-img img-circle" src="/corgi2.jpg" alt="corgi" />
       </div>
+      <p className="title slide-in-right">
+        {count
+          ? `${count} people have clicked the button so far, including you!`
+          : ""}
+      </p>
       <p className="title slide-in-right">Pwetty pwease study?</p>
     </div>
   );

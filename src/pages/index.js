@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Router from "next/router";
 import { useAuthUser, withAuthUser } from "next-firebase-auth";
 import Link from "next/link";
 import Header from "../components/Header";
 
 const Home = () => {
   const AuthUser = useAuthUser();
+  const [disabled, setDisabled] = useState(false);
+  const handler = () => {
+    setDisabled(true);
+    fetch("/api/update-count").then(() => {
+      setDisabled(false);
+      Router.push("/with-a-cherry-on-top");
+    });
+  };
   return (
     <div>
       <Header />
@@ -34,11 +43,14 @@ const Home = () => {
           {String.fromCodePoint(0x1f449) + " " + String.fromCodePoint(0x1f448)}
         </p>
       </div>
-      <div
-        className="button centered title"
-        // style={{ animationDelay: "1.5s" }}
-      >
-        <Link href="/with-a-cherry-on-top">If not, click here</Link>
+      <div className="pls-center">
+        <button
+          className="button centered title"
+          onClick={handler}
+          disabled={disabled}
+        >
+          If not, click here
+        </button>
       </div>
     </div>
   );
