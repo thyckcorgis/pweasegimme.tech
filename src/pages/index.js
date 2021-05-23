@@ -33,8 +33,8 @@ const Home = () => {
         </p>
       </div>
       <div
-        className="button centered title fadeIn"
-        style={{ animationDelay: "1.5s" }}
+        className="button centered title"
+        // style={{ animationDelay: "1.5s" }}
       >
         <Link href="/with-a-cherry-on-top">If not, click here</Link>
       </div>

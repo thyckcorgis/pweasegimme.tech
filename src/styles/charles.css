@@ -1,0 +1,17 @@
+.button {
+  align-items: center;
+  border-radius: 20px;
+  background-color: #f4b670;
+  padding: 1%;
+  max-width: 95%;
+  animation: fadeIn 0.75s linear 1.5s 1 normal forwards;
+  opacity: 0;
+}
+
+.button:hover {
+  /* transform: scale(1.1); */
+  opacity: 1;
+
+  animation: fadeIn 0.75s linear 1.5s 1 normal forwards, shake 0.5s;
+  animation-iteration-count: infinite;
+}
