@@ -14,3 +14,272 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  font-family: "Montserrat";
+  font-size: 56px;
+  text-align: center;
+}
+.body {
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+/* CONTAINERS */
+.img-rectangle {
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 50%;
+  height: auto;
+  margin: 4vh auto;
+}
+.img-circle {
+  height: 400px;
+  width: 400px;
+  margin-bottom: 20%;
+  border-radius: 50%;
+}
+.person {
+  display: block;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.button {
+  align-items: center;
+  flex: auto;
+  width: 70%;
+  background-color: "#f4b670";
+}
+
+/* LETTER ANIMATION */
+.flip-in-x {
+  animation: flipX 0.75s ease 0s 1 normal both;
+}
+.person-img {
+  transition: 0.5s ease;
+  border-radius: 50%;
+  opacity: 1;
+}
+.letter-svg {
+  transition: 0.5s ease;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+}
+.emoji {
+  position: relative;
+  top: -30%;
+  font-size: 69px;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s linear;
+  animation: pwease 1s ease 0s infinite;
+}
+.img-circle:hover .person-img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+}
+.img-circle:hover .emoji {
+  opacity: 1;
+  transform: scale(1.1);
+}
+/* FLIPPING ANIMATION */
+@keyframes flipX {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  40% {
+    animation-timing-function: ease-in;
+    transform: perspective(400px) rotateY(-20deg);
+  }
+  60% {
+    opacity: 1;
+    transform: perspective(400px) rotateY(10deg);
+  }
+  80% {
+    transform: perspective(400px) rotateY(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px);
+  }
+}
+
+/* EMOJI ANIMATION */
+@keyframes pwease {
+  0% {
+    letter-spacing: -11px;
+  }
+  50% {
+    letter-spacing: -20px;
+  }
+  100% {
+    letter-spacing: -11px;
+  }
+}
+
+/* TEXT ANIMATION */
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.75s ease 0s 1 normal both;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* HEADER ANIMATION */
+.slide-in-left {
+  animation: slideInLeft 0.75s ease 0s 1 normal both;
+}
+.slide-in-right {
+  animation: slideInRight 0.75s ease 0s 1 normal both;
+}
+
+.headerLine {
+  background: black;
+  height: 4px;
+  width: 95%;
+  margin-bottom: 4vh;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .img-circle {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10vh;
+    border-radius: 50%;
+  }
+  .row .team {
+    --ifm-col-width: 50% !important;
+  }
+  .emoji {
+    position: relative;
+    top: -40%;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s linear;
+    animation: pwease 1s ease 0s infinite;
+  }
+  @keyframes pwease {
+    0% {
+      letter-spacing: -8px;
+    }
+    50% {
+      letter-spacing: -10px;
+    }
+    100% {
+      letter-spacing: -8px;
+    }
+  }
+  .text-box {
+    width: 75%;
+  }
+  .img-rectangle {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 75%;
+    height: auto;
+    margin: 4vh auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 48px;
+    text-align: left;
+  }
+  .body {
+    font-size: 12px;
+    text-align: center;
+  }
+  .text-box {
+    width: 90%;
+  }
+  .iPhoneBox {
+    display: none;
+  }
+  .img-rectangle {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 90%;
+    height: auto;
+    margin: 4vh auto;
+  }
+  .img-circle {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5vh;
+    border-radius: 50%;
+  }
+  .row .team {
+    --ifm-col-width: 50% !important;
+  }
+  .emoji {
+    position: relative;
+    top: -30%;
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s linear;
+    animation: pwease 1s ease 0s infinite;
+  }
+  @keyframes pwease {
+    0% {
+      letter-spacing: -2px;
+    }
+    50% {
+      letter-spacing: -9px;
+    }
+    100% {
+      letter-spacing: -2px;
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .title {
+    font-size: 35px;
+  }
+  .body {
+    font-size: 12px;
+    text-align: center;
+  }
+  .row .team {
+    --ifm-col-width: 100% !important;
+  }
+}
