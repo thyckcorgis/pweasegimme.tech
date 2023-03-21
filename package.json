@@ -1,23 +1,22 @@
 {
-  "name": "my-app",
+  "name": "up-brain-by-2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@types/react": "^17.0.6",
-    "cassandra-driver": "^4.6.3",
-    "firebase": "^8.6.2",
-    "firebase-admin": "^9.8.0",
-    "next": "10.2.2",
-    "next-firebase-auth": "^0.13.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-firebaseui": "^5.0.2",
-    "typescript": "^4.2.4"
-  },
-  "devDependencies": {}
+    "@types/node": "18.15.5",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.2"
+  }
 }

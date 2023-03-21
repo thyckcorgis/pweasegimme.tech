@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 import Router from "next/router";
-import { useAuthUser, withAuthUser } from "next-firebase-auth";
-import Link from "next/link";
 import Header from "../components/Header";
+import Image from "next/image";
+
+export const BASE_PATH = "/pwetty-pwease-study";
+
+const AuthUser = {
+  email: "corgi@thyck.top",
+  displayName: " Corgi",
+  signOut: () => {},
+};
 
 const Home = () => {
-  const AuthUser = useAuthUser();
   const [disabled, setDisabled] = useState(false);
   const handler = () => {
     setDisabled(true);
-    fetch("/api/update-count").then(() => {
-      setDisabled(false);
-      Router.push("/with-a-cherry-on-top");
-    });
+    Router.push("/with-a-cherry-on-top");
   };
   return (
-    <div>
+    <div className="container">
       <Header />
-      {AuthUser.email ? (
-        <button onClick={AuthUser.signOut}>Sign out</button>
-      ) : (
-        <Link href="/auth">Sign in</Link>
-      )}
-      {AuthUser.displayName ? (
-        <p className="title slide-in-left">
-          Hewwo, {AuthUser.displayName.split(" ")[0]}
-        </p>
-      ) : null}
+      {AuthUser.displayName
+        ? (
+          <p className="title slide-in-left">
+            Hewwo, {AuthUser.displayName.split(" ")[0]}
+          </p>
+        )
+        : null}
       <p className="title slide-in-left" style={{ animationDelay: "0.5s" }}>
         If this has made your day better by at least 2%, we have done our job.
       </p>
@@ -38,7 +38,13 @@ const Home = () => {
         className="img-circle centered flip-in-x"
         style={{ animationDelay: "1s" }}
       >
-        <img className="corgi-img img-circle" src="/corgi.png" alt="corgi" />
+        <Image
+          className="corgi-img img-circle"
+          alt="corgi"
+          src={`${BASE_PATH}/corgi.png`}
+          width={200}
+          height={200}
+        />
         <p className="emoji centered">
           {String.fromCodePoint(0x1f449) + " " + String.fromCodePoint(0x1f448)}
         </p>
@@ -56,4 +62,4 @@ const Home = () => {
   );
 };
 
-export default withAuthUser()(Home);
+export default Home;

@@ -1,11 +1,17 @@
 .button {
   align-items: center;
-  border-radius: 20px;
+  border-radius: 1rem;
   background-color: #f4b670;
-  padding: 1%;
+  padding: 0.5rem;
   max-width: 95%;
   animation: fadeIn 0.75s linear 1.5s 1 normal forwards;
   opacity: 0;
+}
+
+.button.header {
+  opacity: 1;
+  animation: none;
+  padding: 0.5rem;
 }
 
 .button:hover {
